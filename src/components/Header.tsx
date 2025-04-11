@@ -1,16 +1,19 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from './ui/button';
 import { MoonIcon, SunIcon } from "lucide-react";
 import useTheme from '@/hooks/use-theme';
 
 export function Header() {
   const { theme, toggleTheme } = useTheme();
+  const [currentTheme, setCurrentTheme] = useState<'light' | 'dark'>('light');
 
-  const currentTheme = theme === 'system'
-    ? (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-    : theme;
+  useEffect(() => {
+    setCurrentTheme(theme === 'system'
+      ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+      : theme);
+  }, [theme]);
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm">

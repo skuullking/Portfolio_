@@ -4,7 +4,7 @@ import { useState, useEffect, createContext, useContext } from 'react';
 
 type Theme = 'light' | 'dark' | 'system';
 
-function useTheme(): { theme: Theme | 'light' | 'dark'; toggleTheme: () => void } {
+function useTheme(): { theme: Theme; toggleTheme: () => void } {
   const [theme, setTheme] = useState<Theme>('system');
 
   useEffect(() => {
@@ -44,9 +44,8 @@ function useTheme(): { theme: Theme | 'light' | 'dark'; toggleTheme: () => void 
     });
   };
 
-  const currentTheme = theme === 'system' ? (window?.matchMedia('(prefers-color-scheme: dark)')?.matches ? 'dark' : 'light') : theme;
 
-  return { theme: currentTheme, toggleTheme };
+  return { theme, toggleTheme };
 }
 
 export default useTheme;
