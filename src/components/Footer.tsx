@@ -2,7 +2,7 @@
 const Footer = () => {
   return (
     <footer className="py-8">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row justify-center items-center gap-4">
+      <div className="container mx-auto px-4 flex flex-col md:flex-row justify-center items-start gap-8">
         <div className="flex flex-col items-start">
           <p className="text-left">📍 Pontoise, France</p>
           <p className="text-left">🗣️ Français (natif), Anglais (B2)</p>
@@ -17,4 +17,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
