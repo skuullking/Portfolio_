@@ -41,7 +41,7 @@ const Experience = () => {
         <h2 className="text-3xl font-bold mb-8">Expériences professionnelles</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {experiences.map((experience, index) => (
-            <Card key={index}>
+            <Card key={index} className="transition-transform hover:scale-105 hover:shadow-lg">
               <CardHeader>
                 <CardTitle>{experience.title}</CardTitle>
                 <CardDescription>
