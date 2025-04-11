@@ -1,4 +1,6 @@
 
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
 const Skills = () => {
   const skills = {
     Frontend: ["HTML", "CSS", "JavaScript", "Vue.js", "Alpine.js", "Three.js", "Bootstrap"],
@@ -13,16 +15,20 @@ const Skills = () => {
         <h2 className="text-3xl font-bold mb-8">Compétences</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {Object.entries(skills).map(([category, skillList]) => (
-            <div key={category}>
-              <h3 className="text-xl font-semibold mb-4">{category}</h3>
-              <ul>
-                {skillList.map((skill, index) => (
-                  <li key={index} className="mb-2">
-                    {skill}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <Card key={category}>
+              <CardHeader>
+                <CardTitle>{category}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul>
+                  {skillList.map((skill, index) => (
+                    <li key={index} className="mb-2">
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>

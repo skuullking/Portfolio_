@@ -6,7 +6,8 @@ const Footer = () => {
         <p>📍 Pontoise, France</p>
         <p>🗣️ Français (natif), Anglais (B2)</p>
         <div>
-          {/* Add quick links here */}
+          <p>📞 0698514119</p>
+          <p>📧 slimaniyanis143@gmail.com</p>
         </div>
       </div>
     </footer>
