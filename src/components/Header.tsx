@@ -5,7 +5,7 @@ import { Button } from './ui/button';
 import { MoonIcon, SunIcon } from "lucide-react";
 import useTheme from '@/hooks/use-theme';
 
-const Header = () => {
+export function Header() {
   const { theme, toggleTheme } = useTheme();
 
   const currentTheme = theme === 'system'
@@ -27,5 +27,3 @@ const Header = () => {
     </header>
   );
 }
-
-export default Header;

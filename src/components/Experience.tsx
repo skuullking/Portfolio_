@@ -1,7 +1,11 @@
-
+'use client'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import useTheme from "@/hooks/use-theme";
 
 const Experience = () => {
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
+
   const experiences = [
     {
       title: "Stagiaire Développeur Web",
@@ -41,7 +45,7 @@ const Experience = () => {
         <h2 className="text-3xl font-bold mb-8">Expériences professionnelles</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {experiences.map((experience, index) => (
-            <Card key={index} className="transition-transform hover:scale-105 shadow-md hover:shadow-lg">
+            <Card key={index} className={`transition-transform hover:scale-105 shadow-md hover:shadow-lg ${isDark ? 'shadow-white/20' : 'shadow-md hover:shadow-lg'}`}>
               <CardHeader>
                 <CardTitle>{experience.title}</CardTitle>
                 <CardDescription>
@@ -66,4 +70,3 @@ const Experience = () => {
 };
 
 export default Experience;
-

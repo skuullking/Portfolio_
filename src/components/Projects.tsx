@@ -1,7 +1,11 @@
-
+'use client'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import useTheme from "@/hooks/use-theme";
 
 const Projects = () => {
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
+
   const projects = [
     {
       name: "Site de gestion des congés",
@@ -38,7 +42,7 @@ const Projects = () => {
                 {project.technologies.map((tech, index) => (
                   <span
                     key={index}
-                    className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 shadow-xl"
+                    className={`inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 shadow-lg ${isDark ? 'shadow-white/20' : 'shadow-lg'}`}
                   >
                     {tech}
                   </span>
@@ -53,4 +57,3 @@ const Projects = () => {
 };
 
 export default Projects;
-

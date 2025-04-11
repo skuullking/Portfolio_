@@ -1,7 +1,11 @@
-
+'use client'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import useTheme from "@/hooks/use-theme";
 
 const Skills = () => {
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
+
   const skills = {
     Frontend: ["HTML", "CSS", "JavaScript", "Vue.js", "Alpine.js", "Three.js", "Bootstrap"],
     Backend: ["PHP", "Node.js", "Python"],
@@ -15,7 +19,7 @@ const Skills = () => {
         <h2 className="text-3xl font-bold mb-8">Compétences</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {Object.entries(skills).map(([category, skillList]) => (
-            <Card key={category} className="transition-transform hover:scale-105 shadow-md hover:shadow-lg">
+            <Card key={category} className={`transition-transform hover:scale-105 shadow-md hover:shadow-lg ${isDark ? 'shadow-white/20' : 'shadow-md hover:shadow-lg'}`}>
               <CardHeader>
                 <CardTitle>{category}</CardTitle>
               </CardHeader>
