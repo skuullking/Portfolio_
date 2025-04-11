@@ -14,6 +14,16 @@ const Experience = () => {
       ],
     },
     {
+      title: "Agent de Domiciliation",
+      company: "SPADA Coallia",
+      dates: "août 2023 à mai 2024",
+      location: "Paris, France",
+      missions: [
+        "Aide aux démarches administratives pour les personnes sans domicile fixe",
+        "Gestion des dossiers et relation avec les services sociaux",
+      ],
+    },
+    {
       title: "Réceptionniste",
       company: "Hôtel Relais Bergson",
       dates: "Depuis juillet 2023",
