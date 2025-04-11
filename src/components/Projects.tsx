@@ -1,4 +1,6 @@
 
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
 const Projects = () => {
   const projects = [
     {
@@ -36,7 +38,7 @@ const Projects = () => {
                 {project.technologies.map((tech, index) => (
                   <span
                     key={index}
-                    className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 shadow-lg"
+                    className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 shadow-xl"
                   >
                     {tech}
                   </span>
