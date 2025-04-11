@@ -16,7 +16,7 @@ const Hero = () => {
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">Mohamed-Yanis Slimani</h1>
         <p className="text-md md:text-lg mt-4">Etudiant en Développement Web & Application</p>
         {isClient && (
-          <Button className="mt-8" onClick={() => window.open('/Mohamed-Yanis_Slimani_CV.pdf', '_blank')}>
+          <Button className="mt-8" onClick={() => window.open('../cv_mohamed-yanis_slimani_2025.pdf', '_blank')}>
             Télécharger CV
           </Button>
         )}
