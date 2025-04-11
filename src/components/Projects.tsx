@@ -29,7 +29,7 @@ const Projects = () => {
         <h2 className="text-3xl font-bold mb-8">Projets</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="p-4 border rounded-lg">
+            <div key={index} className="p-4 border rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
               <p className="text-gray-500 mb-4">{project.description}</p>
               <div>
@@ -51,3 +51,4 @@ const Projects = () => {
 };
 
 export default Projects;
+
