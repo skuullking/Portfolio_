@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, createContext, useContext, ReactNode } from 'react';
+import { useState, useEffect } from 'react';
 
 type Theme = 'light' | 'dark' | 'system';
 
@@ -20,12 +20,17 @@ function useTheme(): { theme: Theme | 'light' | 'dark'; toggleTheme: () => void 
 
   useEffect(() => {
     const root = window.document.documentElement;
-    const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    const isDark = theme === 'dark' || (theme === 'system' && window?.matchMedia('(prefers-color-scheme: dark)')?.matches);
     if (isDark) {
       root.classList.add('dark');
     } else {
       root.classList.remove('dark');
     }
+
+    // Cleanup function to remove the class when the component unmounts or the theme changes
+    return () => {
+      root.classList.remove('dark');
+    };
   }, [theme]);
 
   const toggleTheme = () => {
@@ -39,7 +44,7 @@ function useTheme(): { theme: Theme | 'light' | 'dark'; toggleTheme: () => void 
     });
   };
 
-  const currentTheme = theme === 'system' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme;
+  const currentTheme = theme === 'system' ? (window?.matchMedia('(prefers-color-scheme: dark)')?.matches ? 'dark' : 'light') : theme;
 
   return { theme: currentTheme, toggleTheme };
 }

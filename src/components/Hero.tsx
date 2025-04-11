@@ -6,7 +6,7 @@ const Hero = () => {
       <div className="text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">Mohamed-Yanis Slimani</h1>
         <p className="text-md md:text-lg mt-4">Etudiant en Développement Web & Application</p>
-        <Button className="mt-8">Télécharger CV</Button>
+        <Button className="mt-8" onClick={() => window.open('/Mohamed-Yanis_Slimani_CV.pdf', '_blank')}>Télécharger CV</Button>
       </div>
     </section>
   );
