@@ -45,7 +45,7 @@ const Experience = () => {
         <h2 className="text-3xl font-bold mb-8">Expériences professionnelles</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {experiences.map((experience, index) => (
-            <Card key={index} className={`transition-transform hover:scale-105 shadow-md hover:shadow-lg ${isDark ? 'shadow-white/20' : 'shadow-md hover:shadow-lg'} card card-inner`}>
+            <Card variant="ghost" key={index} className={`transition-transform hover:scale-105 shadow-md hover:shadow-lg ${isDark ? 'shadow-white/20' : 'shadow-md hover:shadow-lg'} card card-inner`}>
               <CardHeader>
                 <CardTitle>{experience.title}</CardTitle>
                 <CardDescription>
@@ -70,4 +70,3 @@ const Experience = () => {
 };
 
 export default Experience;
-

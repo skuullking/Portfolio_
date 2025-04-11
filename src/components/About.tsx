@@ -10,7 +10,7 @@ const About = () => {
     <section className="py-16">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-8">À propos</h2>
-        <Card className={`transition-transform hover:scale-105 shadow-md hover:shadow-lg ${isDark ? 'shadow-white/20' : 'shadow-md hover:shadow-lg'} card card-inner`}>
+        <Card variant="ghost" className={`transition-transform hover:scale-105 shadow-md hover:shadow-lg ${isDark ? 'shadow-white/20' : 'shadow-md hover:shadow-lg'} card card-inner`}>
           <CardContent>
             <p className="text-justify shadow-text">
               Développeur passionné par la création d’applications modernes,
@@ -37,4 +37,3 @@ const About = () => {
 };
 
 export default About;
-
